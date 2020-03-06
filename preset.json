@@ -17,6 +17,14 @@
                     "useBuiltIns": "entry"
                 }]
             ]
+        },
+        "@vue/cli-plugin-eslint":{
+            "version": "4.2.3",
+            "config": "prettier",
+            "lintOn": [
+              "save",
+              "commit"
+            ]
         }
     }
 }

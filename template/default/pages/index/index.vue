@@ -1,6 +1,14 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-03-06 10:38:45
+ * @LastEditTime: 2020-03-06 12:30:51
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \uni-preset-vue\template\default\pages\index\index.vue
+ -->
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<image class="logo" src="/static/image/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
