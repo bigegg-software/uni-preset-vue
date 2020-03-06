@@ -1,7 +1,5 @@
 # @uni-app/vue-cli-preset-uni-app
 
-> uni-app preset for vue-cli
-基于dcloudio/uni-preset-vue
 
 - 添加 eslint+prettier
 
