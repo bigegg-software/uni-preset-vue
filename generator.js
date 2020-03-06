@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-03-06 10:38:45
- * @LastEditTime: 2020-03-06 11:29:06
- * @LastEditors: your name
+ * @LastEditTime: 2020-03-06 12:50:46
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \uni-preset-vue\generator.js
  */
@@ -96,11 +96,6 @@ module.exports = (api, options, rootOptions) => {
 
     const base = 'src'
     await generate(path.resolve(__dirname, './template/common'), files)
-    if (template === 'default') {
-      await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
-    } else if (template === 'default-ts') {
-      await generate(path.resolve(__dirname, './template/common-ts'), files)
-      await generate(path.resolve(__dirname, './template/default-ts'), files, base, rootOptions)
-    }
+    await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
   })
 }
