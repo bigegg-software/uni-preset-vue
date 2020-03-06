@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-03-06 10:38:45
+ * @LastEditTime: 2020-03-06 12:58:06
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \uni-preset-vue\template\common\babel.config.js
+ */
 const plugins = []
 
 if (process.env.UNI_OPT_TREESHAKINGNG) {
@@ -25,7 +33,9 @@ if (process.env.UNI_PLATFORM === 'app-plus' && process.env.UNI_USING_V8) {
         }
       }
     ])
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 process.UNI_LIBRARIES = process.UNI_LIBRARIES || ['@dcloudio/uni-ui']
