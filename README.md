@@ -9,9 +9,10 @@
 
   创建项目
 
-  
-
 ```
-vue create -p wht300/uni-preset-vue 项目名
+vue create -p bigegg-software/uni-preset-vue 项目名
 ```
-
+例如
+```
+vue create -p bigegg-software/uni-preset-vue myProject
+```
