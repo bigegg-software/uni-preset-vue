@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "{{name}}",
 	"appid": "",
 	"description": "",
 	"versionName": "1.0.0",
@@ -54,7 +54,7 @@
 
 	},
 	"mp-weixin": {
-		"appid": "",
+		"appid": "{{mp-weixin-appid}}",
 		"setting": {
 			"urlCheck": false
 		},

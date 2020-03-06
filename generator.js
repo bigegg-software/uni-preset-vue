@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-03-06 10:38:45
- * @LastEditTime: 2020-03-06 12:50:46
+ * @LastEditTime: 2020-03-06 15:11:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \uni-preset-vue\generator.js
@@ -11,7 +11,7 @@ const path = require('path')
 
 const isBinary = require('isbinaryfile')
 
-async function generate (dir, files, base = '', rootOptions = {}) {
+async function generate (dir, files, base = '',options = {}, rootOptions = {}) {
   const glob = require('glob')
 
   glob.sync('**/*', {
@@ -26,7 +26,9 @@ async function generate (dir, files, base = '', rootOptions = {}) {
     } else {
       let content = fs.readFileSync(sourcePath, 'utf-8')
       if (path.basename(filename) === 'manifest.json') {
-        content = content.replace('{{name}}', rootOptions.projectName || '')
+        content = content.replace('{{name}}', options.appName || rootOptions.projectName || '')
+        content = content.replace('{{mp-weixin-appid}}', options.mpWeixinAppid || rootOptions.mpWeixinAppid || '')
+
       }
       if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
         files[`.${filename.slice(1)}`] = content
@@ -51,6 +53,7 @@ module.exports = (api, options, rootOptions) => {
       }
     }
   })
+
   switch(options.preprocessor){
     case("less"):{
       api.extendPackage(pkg => {
@@ -96,6 +99,6 @@ module.exports = (api, options, rootOptions) => {
 
     const base = 'src'
     await generate(path.resolve(__dirname, './template/common'), files)
-    await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
+    await generate(path.resolve(__dirname, './template/default'), files, base, options, rootOptions)
   })
 }
